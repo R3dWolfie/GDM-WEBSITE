@@ -51,19 +51,24 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 10px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .card-text {
     font-size: 16px;
     margin-bottom: 20px;
-    color: #000000;
+    color: #ffffff;
 }
 
 .btn-primary {
@@ -72,8 +77,8 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #D64045;
-    border-color: #D64045;
+    background-color: #81C14B;
+    border-color: #81C14B;
 }
 
 .text-center {
