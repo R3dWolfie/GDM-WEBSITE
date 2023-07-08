@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column text-center">
+    <header class="mb-auto">
+        <h1 class="cover-heading">Welcome to the Geometry Dash Multiplayer Website!</h1>
+        <p class="lead">Here, you can find and explore various mods created by the community.</p>
+    </header>
+
+    <main role="main" class="inner cover">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Become a VIP</h5>
+                        <p class="card-text">Unlock exclusive features and support the project.</p>
+                        <a href="{{ buy_vip_url }}" class="btn btn-primary">Buy VIP</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Join Our Discord Server</h5>
+                        <p class="card-text">Connect with other players, share experiences, and get support.</p>
+                        <a href="{{ discord_url }}" class="btn btn-primary">Join Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Download the Mod</h5>
+                        <p class="card-text">Experience Geometry Dash Multiplayer and explore new possibilities.</p>
+                        <a href="https://mega.nz/file/QIFGmTTD#-BL7Uby-OOJCYQS6RXz2bDktVPV7XegNRo0NF6KRfsM" class="btn btn-primary">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2 class="text-center">Latest Patreon Supporters</h2>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        {% if latest_supporters %}
+                            <ul class="list-unstyled">
+                                {% for supporter in latest_supporters %}
+                                    <li>{{ supporter }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No supporters found.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2 class="text-center">Featured Mods</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/images/mod1.jpg" class="card-img-top" alt="Mod 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Mod 1</h5>
+                        <p class="card-text">Description of Mod 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/images/mod2.jpg" class="card-img-top" alt="Mod 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mod 2</h5>
+                        <p class="card-text">Description of Mod 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/images/mod3.jpg" class="card-img-top" alt="Mod 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mod 3</h5>
+                        <p class="card-text">Description of Mod 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
