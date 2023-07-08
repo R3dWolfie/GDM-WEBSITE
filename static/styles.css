@@ -1,14 +1,19 @@
 /* static/css/custom.css */
 body {
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
 }
+
 .site-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-brand {
@@ -26,12 +31,14 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
     color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .lead {
     font-size: 20px;
     margin-bottom: 40px;
-    color: #666666;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .card {
@@ -54,13 +61,13 @@ body {
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #D64045;
+    border-color: #D64045;
 }
 
 .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #D64045;
+    border-color: #D64045;
 }
 
 .text-center {
@@ -74,6 +81,9 @@ body {
 
 footer {
     background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 20px 0;
     color: #ffffff;
 }
@@ -88,6 +98,11 @@ body {
     overflow: hidden;
 }
 
+h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .fullscreen-video {
     position: fixed;
     top: 0;
@@ -96,5 +111,5 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(60%) blur(2px);
+    filter: brightness(30%) blur(2px);
 }
