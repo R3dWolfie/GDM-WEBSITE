@@ -18,7 +18,7 @@ body {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333333;
+    color: #ffffff;
 }
 
 .lead {
@@ -37,7 +37,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #333333;
+    color: #000000;
 }
 
 .card-text {
@@ -66,7 +66,7 @@ body {
 }
 
 footer {
-    background-color: #333333;
+    background-color: #000000;
     padding: 20px 0;
     color: #ffffff;
 }
@@ -89,4 +89,6 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    filter: brightness(60%) blur(2px);
 }
+
