@@ -1,7 +1,14 @@
 /* static/css/custom.css */
 body {
-    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background-color: #f8f9fa;
+}
+.site-content {
+    flex: 1;
 }
 
 .navbar-brand {
@@ -76,7 +83,7 @@ footer p {
     font-size: 14px;
     text-align: center;
 }
-/* static/css/custom.css */
+
 body {
     overflow: hidden;
 }
@@ -91,4 +98,3 @@ body {
     z-index: -1;
     filter: brightness(60%) blur(2px);
 }
-
