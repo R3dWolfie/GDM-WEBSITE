@@ -35,9 +35,9 @@ def home():
                            latest_supporters=latest_supporters)
 
 
-@app.route('/test')
+@app.route('/downloads')
 def test():
-    return "Deez nuts"
+    return render_template('downloads.html')
 
 
 if __name__ == '__main__':
