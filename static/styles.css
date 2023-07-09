@@ -87,11 +87,19 @@ body {
 
 
 .btn-primary {
-  background-color: transparent;
-  background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
-  background-size: 400% 400%; /* Adjust the size for wider colors */
-  animation: rainbow 5s linear infinite;
+  color: white; /* Set the text color to white */
+  transition: color 0.3s ease-in-out; /* Add transition for the text color */
 }
+
+.btn-primary.rainbow {
+  background-color: transparent; /* Remove the background color */
+  background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 400% 400%;
+  animation: none; /* Remove the rainbow animation */
+}
+
+
+
 
 @keyframes rainbow {
   0% {
@@ -136,7 +144,7 @@ h2 {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(30%) blur(2px);
+    filter: brightness(50%) blur(2px);
 }
 
 .sparkle {
@@ -193,9 +201,58 @@ h2 {
 }
 
 .card-title span {
-  animation: rainbow 8s infinite;
+  animation: rainbow 20s infinite;
 }
 
+.star-sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(to top right, rgba(255, 255, 255, 0.8), transparent),
+              linear-gradient(to top left, rgba(255, 255, 255, 0.8), transparent),
+              linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), transparent),
+              linear-gradient(to bottom left, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: star-sparkle 1.5s ease-in-out infinite;
+}
 
+@keyframes star-sparkle {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
+.star-sparkle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('path/to/star-image.png');
+  background-size: cover;
+  pointer-events: none;
+  animation: sparkle 2s linear infinite;
+}
 
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}

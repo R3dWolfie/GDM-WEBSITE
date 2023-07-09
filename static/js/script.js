@@ -9,27 +9,19 @@ buttons.forEach(button => {
   });
 });
 
-// Add different sparkle effect to the cards
+// Add star-shaped sparkle effect to the cards
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   for (let i = 0; i < 5; i++) {
     const sparkle = document.createElement('span');
-    sparkle.classList.add('sparkle');
+    sparkle.classList.add('star-sparkle');
     sparkle.style.top = `${getRandomPosition(card.offsetHeight)}px`;
     sparkle.style.left = `${getRandomPosition(card.offsetWidth)}px`;
     sparkle.style.animationDelay = `${getRandomDelay()}s`;
     card.appendChild(sparkle);
   }
 });
-
-function getRandomPosition(max) {
-  return Math.floor(Math.random() * max);
-}
-
-function getRandomDelay() {
-  return Math.random() * 0.5 + 0.2; // Random delay between 0.2s and 0.7s
-}
 
 // Flowing rainbow effect for card titles
 const cardTitles = document.querySelectorAll('.card-title');
@@ -42,9 +34,29 @@ cardTitles.forEach(title => {
 
   spanElements.forEach((span, index) => {
     span.style.animationDelay = `${index * 0.1}s`;
-    span.classList.add('rainbow');
+    span.classList.add('rainbow-text');
   });
 });
 
+function getRandomPosition(max) {
+  return Math.floor(Math.random() * max);
+}
 
+function getRandomDelay() {
+  return Math.random() * 0.5 + 0.2; // Random delay between 0.2s and 0.7s
+}
 
+function createStarSparkle() {
+  const sparkle = document.createElement('span');
+  sparkle.classList.add('star-sparkle');
+  sparkle.style.top = `${getRandomPosition(window.innerHeight)}px`;
+  sparkle.style.left = `${getRandomPosition(window.innerWidth)}px`;
+  sparkle.style.animationDelay = `${getRandomDelay()}s`;
+  document.body.appendChild(sparkle);
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 3000);
+}
+
+setInterval(createStarSparkle, 1000);
