@@ -36,9 +36,12 @@ def home():
 
 
 @app.route('/downloads')
-def test():
+def downloads():
     return render_template('downloads.html')
 
+@app.route('/VIP')
+def VIP():
+    return render_template('VIP.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
