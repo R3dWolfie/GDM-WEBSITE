@@ -41,22 +41,24 @@ body {
 }
 
 .card {
-    margin-right: auto;
-    margin-left: auto;
-    width: 300px;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-    height: 250px;
-    border-radius: 5px;
-    backdrop-filter: blur(14px);
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  height: 250px;
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(129, 124, 124, 0.3);
 }
+
 
 .card-title {
     font-size: 24px;
@@ -72,23 +74,35 @@ body {
 }
 
 .btn-primary {
-    background-color: #D64045;
-    border-color: #D64045;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.btn-primary:hover {
-    background-color: #81C14B;
-    border-color: #81C14B;
+.btn-primary.rainbow {
+  background-color: #D64045; /* Initial color */
 }
 
-.text-center {
-    text-align: center;
+.btn-primary.rainbow-alt {
+  background-color: #81C14B; /* Alternate color */
 }
 
-.list-unstyled {
-    padding-left: 0;
-    list-style: none;
+
+.btn-primary {
+  background-color: transparent;
+  background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 400% 400%; /* Adjust the size for wider colors */
+  animation: rainbow 5s linear infinite;
 }
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 
 footer {
     background-color: #000000;
@@ -124,3 +138,64 @@ h2 {
     z-index: -1;
     filter: brightness(30%) blur(2px);
 }
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), transparent),
+              linear-gradient(to bottom left, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.card-title span {
+  animation: rainbow 8s infinite;
+}
+
+
+
+
