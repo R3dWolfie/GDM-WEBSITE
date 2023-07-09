@@ -75,30 +75,21 @@ body {
 
 .btn-primary {
   transition: background-color 0.3s ease-in-out;
+  background-color: #FF7779;
+  outline-color: red; /* Change the outline color to red */
+  outline-style: solid; /* Change the outline style to solid */
+  outline-width: 2px; /* Adjust the outline width as desired */
 }
 
 .btn-primary.rainbow {
-  background-color: #D64045; /* Initial color */
+  background-color: #FF7779; /* Initial color */
+  outline-color: red; /* Change the outline color to red */
 }
 
 .btn-primary.rainbow-alt {
-  background-color: #81C14B; /* Alternate color */
+  background-color: #FF7779; /* Alternate color */
+  outline-color: red; /* Change the outline color to red */
 }
-
-
-.btn-primary {
-  color: white; /* Set the text color to white */
-  transition: color 0.3s ease-in-out; /* Add transition for the text color */
-}
-
-.btn-primary.rainbow {
-  background-color: transparent; /* Remove the background color */
-  background-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
-  background-size: 400% 400%;
-  animation: none; /* Remove the rainbow animation */
-}
-
-
 
 
 @keyframes rainbow {
