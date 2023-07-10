@@ -2,43 +2,63 @@
 
 {% block content %}
   <div class="container">
+    <link rel="stylesheet" type="text/css" href="static/vip.css">
     <div class="row">
-      <div class="col-lg-6">
-        <h1 class="text-white">Support our Geometry Dash Multiplayer Mod!</h1>
-        <p class="text-white">Help us cover the server costs and website expenses by becoming a VIP/Patreon supporter. Your support will enable us to continue providing a seamless multiplayer experience and maintain a reliable server infrastructure.</p>
-
-        <h2 class="text-white">Benefits of Becoming a VIP/Patreon:</h2>
-        <ul class="text-white">
-          <li>Exclusive access to VIP-only features and levels</li>
-          <li>Early access to new updates and features</li>
-          <li>Priority support for any technical issues</li>
-          <li>Recognition in the mod's credits and community</li>
-          <li>Direct input on future development decisions</li>
-        </ul>
-
-        <h2 class="text-white">Support Tiers:</h2>
-        <p class="text-white">Choose the tier that suits you best:</p>
-        <ul class="text-white">
-          <li><strong>Basic Supporter:</strong> $5 per month</li>
-          <li><strong>VIP+ Supporter:</strong> $10 per month</li>
-          <li><strong>MVP Supporter:</strong> $20 per month</li>
-          <li><strong>Flex Supporter:</strong> $50 per month</li>
-        </ul>
-
-        <h2 class="text-white">How to Become a VIP/Patreon:</h2>
-        <p class="text-white">Follow these steps to become a VIP/Patreon supporter:</p>
-        <ol class="text-white">
-          <li>Visit our Patreon page at [insert your Patreon page link]</li>
-          <li>Select the desired support tier</li>
-          <li>Complete the payment process</li>
-          <li>You will receive instructions on how to access your VIP benefits</li>
-        </ol>
-
-        <p class="text-white">Thank you for supporting our Geometry Dash Multiplayer Mod!</p>
+      <div class="col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title">Support our Geometry Dash Multiplayer Mod!</h1>
+            <p class="card-text">Help us cover the server costs and website expenses by becoming a VIP/Patreon supporter. Your support will enable us to continue providing a seamless multiplayer experience and maintain a reliable server infrastructure.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-6 d-flex justify-content-end align-items-center">
+      <div class="col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Benefits of Becoming a VIP/Patreon:</h2>
+            <ul>
+              <li>Exclusive access to VIP-only features and levels</li>
+              <li>Early access to new updates and features</li>
+              <li>Priority support for any technical issues</li>
+              <li>Recognition in the mod's credits and community</li>
+              <li>Direct input on future development decisions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Support Tiers:</h2>
+            <ul>
+              <li><strong>Basic Supporter:</strong> $5 per month</li>
+              <li><strong>VIP+ Supporter:</strong> $10 per month</li>
+              <li><strong>MVP Supporter:</strong> $20 per month</li>
+              <li><strong>Flex Supporter:</strong> $50 per month</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">How to Become a VIP/Patreon:</h2>
+            <ol>
+              <li>Visit our Patreon page at [insert your Patreon page link]</li>
+              <li>Select the desired support tier</li>
+              <li>Complete the payment process</li>
+              <li>You will receive instructions on how to access your VIP benefits</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-4 d-flex justify-content-center align-items-center">
         <a href="https://www.patreon.com/GDMservers"><img src="static/images/patreon-image.webp" alt="Patreon" class="img-fluid"></a>
       </div>
     </div>
   </div>
+
+  <script src="static/js/vip.js"></script>
 {% endblock %}

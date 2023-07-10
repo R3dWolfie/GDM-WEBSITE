@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card {
+  width: 100%;
+  min-height: 200px;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 0.3s ease-in-out;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  padding: 15px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.card.hover {
+  transform: translateY(-5px) rotateX(1deg); /* Adjust the transform values to your liking */
+  box-shadow: 0 20px 40px rgba(129, 124, 124, 0.3);
+  height: auto; /* Expand the card height on hover */
+  z-index: 1; /* Bring the hovered card to the front */
+}
+
+.card.hover ~ .card {
+  transform: translateY(0) rotateX(0); /* Reset the transform for other cards */
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+  overflow-wrap: break-word;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; /* Add transition for smooth fade-in effect */
+}
+
+ul,
+ol {
+  margin-top: 0;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out;
+  color: #ffffff;
+}
+
+.card.hover .card-text { /* Show card-text on hover */
+  opacity: 1;
+}
+
+.card-body:hover ul,
+.card-body:hover ol {
+  opacity: 1;
+  height: auto;
+}
+
+.card-body p:last-child {
+  margin-bottom: 0;
+}
