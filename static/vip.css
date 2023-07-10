@@ -1,16 +1,21 @@
 .top-card {
   min-height: 300px;
-  margin-bottom: 20px; /* Add space below each card */
+  margin-bottom: 30px;
 }
 
 .card {
-  margin: 15px; /* Add space around each card */
+  margin: 20px; /* This will add space around each card */
 }
 
 .card-body {
-  padding: 20px; /* Add padding inside the card */
+  padding: 20px;
+  padding-bottom: 40px; /* This will add some space below the "Get" buttons */
 }
 
 li {
   color: white;
+}
+
+.btn {
+  margin-bottom: 20px;
 }
