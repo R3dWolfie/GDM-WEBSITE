@@ -7,6 +7,18 @@ body {
     padding: 0;
 }
 
+li {
+    color: white;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+}
+p {
+    color: white;
+}
 .site-content {
     flex: 1;
     display: flex;

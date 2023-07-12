@@ -8,8 +8,8 @@
     </header>
 
     <main role="main" class="inner cover">
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row mb-4">
+            <div class="col-12 col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Become a VIP</h5>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Join Our Discord Server</h5>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-12 col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Download the Mod</h5>
@@ -37,12 +37,11 @@
                 </div>
             </div>
         </div>
-        <br>
         <h2 class="text-center">Latest Patreon Supporters</h2>
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-6 offset-md-3">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body text-center text-md-left">
                         {% if latest_supporters %}
                             <ul class="list-unstyled">
                                 {% for supporter in latest_supporters %}
@@ -56,7 +55,6 @@
                 </div>
             </div>
         </div>
-        <br>
     </main>
     <script src="static/js/script.js"></script>
 </div>
