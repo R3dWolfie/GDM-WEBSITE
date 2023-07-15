@@ -150,32 +150,6 @@ h2 {
     filter: brightness(50%) blur(2px);
 }
 
-.sparkle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), transparent),
-              linear-gradient(to bottom left, rgba(255, 255, 255, 0.8), transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: sparkle 1.5s ease-in-out infinite;
-}
-
-@keyframes sparkle {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: translate(-50%, -50%) scale(0.7);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
 @keyframes rainbow {
   0% {
     color: red;

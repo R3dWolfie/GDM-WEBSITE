@@ -1,28 +1,21 @@
 import requests
-import patreon
 from flask import Flask, render_template
+from patreon import API, OAuth
 
 app = Flask(__name__, template_folder='templates')
 
+client_id = "tWe8WLdrzldJNM1W2wwQO47x6w3V-jXKWHxqoKpAEQYkstEXQHJndxUN01qvSw2n"  # Replace with your client ID
+client_secret = "nddXb3R832dFtzEo62RBwRX6BIXK86NpeE5dXGrbbTAsUPCEvZYy5A3E8yz8BKSa"  # Replace with your client secret
+access_token = "eWl9Ls5o4sebZvXfkmRFRUL-qcSbiHZEgIAbyxPULAA"  # Replace with your access token
 
-client_id = None      # Replace with your data
-client_secret = None  # Replace with your data
-creator_id = None     # Replace with your data
+oauth_client = OAuth(client_id, client_secret)
+api_client = API(access_token)
 
 def get_latest_supporters():
-    api_url = "https://www.patreon.com/api/external/feed/creator/51105446"
-    headers = {"Authorization": "Bearer your_access_token"}
-    response = requests.get(api_url, headers=headers)
+    latest_supporters = ["Reddie", "Lamnhiem", "Sirrilist"]
+    return latest_supporters
 
-    if response.status_code == 200:
-        data = response.json()
-        latest_supporters = []
-        for item in data["data"]:
-            supporter_name = item["attributes"]["full_name"]
-            latest_supporters.append(supporter_name)
-        return latest_supporters
 
-    return None
 
 
 @app.route('/')
@@ -48,4 +41,6 @@ def about():
     return render_template('about.html.')
 
 if __name__ == '__main__':
+    get_latest_supporters()
+    print(get_latest_supporters())
     app.run(debug=True, host="0.0.0.0")
