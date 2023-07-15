@@ -1,7 +1,6 @@
 import requests
 import patreon
 from flask import Flask, render_template
-import threading
 
 app = Flask(__name__, template_folder='templates')
 
@@ -15,24 +14,18 @@ api_client = patreon.API(access_token)
 campaign_response = api_client.fetch_campaign()
 campaign_id = campaign_response.data()[0].id()
 
-latest_supporters = []
+
+all_pledges = []
+
 cursor = None
+while True:
+    pledges_response = api_client.fetch_page_of_pledges(campaign_id, 25, cursor=cursor)
 
+    cursor = api_client.extract_cursor(pledges_response)
+    all_pledges += pledges_response.data()
+    if not cursor:
+        break
 
-def fetch_supporters():
-    global latest_supporters, cursor
-
-    while True:
-        pledges_response = api_client.fetch_page_of_pledges(campaign_id, 25, cursor=cursor)
-        cursor = api_client.extract_cursor(pledges_response)
-        latest_supporters += pledges_response.data()
-        if not cursor:
-            break
-
-
-def start_fetching():
-    thread = threading.Thread(target=fetch_supporters)
-    thread.start()
 
 
 @app.route('/')
@@ -40,9 +33,13 @@ def start_fetching():
 def home():
     buy_vip_url = '/buy-vip'
     discord_url = 'https://discord.gg/gdm'
-    supporters = [pledge.relationship('patron').attribute('full_name') for pledge in latest_supporters]
+    latest_supporters = []
 
-    return render_template('home.html', buy_vip_url=buy_vip_url, discord_url=discord_url, latest_supporters=supporters)
+    for pledge in all_pledges:
+        latest_supporters.append(pledge.relationship('patron').attribute('full_name'))
+
+    # latest_supporters = get_latest_supporters()
+    return render_template('home.html', buy_vip_url=buy_vip_url, discord_url=discord_url, latest_supporters=latest_supporters)
 
 
 @app.route('/downloads')
@@ -61,6 +58,5 @@ def about():
 
 
 if __name__ == '__main__':
-    start_fetching()
     print("Fetching patrons...")
     app.run(debug=True, host="0.0.0.0")
