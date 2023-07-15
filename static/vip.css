@@ -19,3 +19,39 @@ li {
 .btn {
   margin-bottom: 20px;
 }
+
+.card {
+    color: #123456;
+}
+
+.tier-card {
+    background-color: #d6d6d6;
+    margin: 20px;
+}
+
+.tropo-btn {
+    background-color: #1E33BD;
+    padding: 7px;
+}
+
+.meso-btn {
+    background-color: #D4340D;
+    padding: 7px;
+}
+
+.exo-btn {
+    background-color: #EBB11A;
+    padding: 7px;
+}
+
+.card-txt {
+    color: #171717;
+}
+
+.card-txt-light {
+    color: #DBDBDB;
+}
+
+h5 {
+    color: black;
+}
