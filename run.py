@@ -1,6 +1,6 @@
 import requests
 import patreon
-from flask import Flask, render_template
+from flask import Flask, render_template, g, request
 
 app = Flask(__name__, template_folder='templates')
 
@@ -25,6 +25,13 @@ while True:
     if not cursor:
         break
 
+def is_mobile_device(user_agent):
+    return 'Mobi' in user_agent
+
+@app.before_request
+def before_request():
+    user_agent = request.headers.get('User-Agent')
+    g.is_mobile = is_mobile_device(user_agent)
 
 @app.route('/')
 @app.route('/home')
@@ -38,32 +45,27 @@ def home():
 
     # latest_supporters = get_latest_supporters()
     return render_template('home.html', buy_vip_url=buy_vip_url, discord_url=discord_url,
-                           latest_supporters=latest_supporters)
+                           latest_supporters=latest_supporters, is_mobile=g.is_mobile)
 
 
 @app.route('/downloads')
 def downloads():
-    return render_template('downloads.html')
-
+    return render_template('downloads.html', is_mobile=g.is_mobile)
 
 @app.route('/VIP')
 def VIP():
-    return render_template('VIP.html')
-
+    return render_template('VIP.html', is_mobile=g.is_mobile)
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
-
+    return render_template('about.html', is_mobile=g.is_mobile)
 
 @app.route('/mobile')
 def mobile():
     latest_supporters = []
-
     for pledge in all_pledges:
         latest_supporters.append(pledge.relationship('patron').attribute('full_name'))
-    return render_template('mobile.html', latest_supporters=latest_supporters)
-
+    return render_template('mobile.html', latest_supporters=latest_supporters, is_mobile=g.is_mobile)
 
 if __name__ == '__main__':
     print("Fetching patrons...")
