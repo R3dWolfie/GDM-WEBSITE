@@ -14,7 +14,6 @@ api_client = patreon.API(access_token)
 campaign_response = api_client.fetch_campaign()
 campaign_id = campaign_response.data()[0].id()
 
-
 all_pledges = []
 
 cursor = None
@@ -25,7 +24,6 @@ while True:
     all_pledges += pledges_response.data()
     if not cursor:
         break
-
 
 
 @app.route('/')
@@ -39,7 +37,8 @@ def home():
         latest_supporters.append(pledge.relationship('patron').attribute('full_name'))
 
     # latest_supporters = get_latest_supporters()
-    return render_template('home.html', buy_vip_url=buy_vip_url, discord_url=discord_url, latest_supporters=latest_supporters)
+    return render_template('home.html', buy_vip_url=buy_vip_url, discord_url=discord_url,
+                           latest_supporters=latest_supporters)
 
 
 @app.route('/downloads')
@@ -54,7 +53,16 @@ def VIP():
 
 @app.route('/about')
 def about():
-    return render_template('about.html.')
+    return render_template('about.html')
+
+
+@app.route('/mobile')
+def mobile():
+    latest_supporters = []
+
+    for pledge in all_pledges:
+        latest_supporters.append(pledge.relationship('patron').attribute('full_name'))
+    return render_template('mobile.html', latest_supporters=latest_supporters)
 
 
 if __name__ == '__main__':

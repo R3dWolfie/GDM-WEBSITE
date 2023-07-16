@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h1 class="cover-heading">GDMa</h1>
+        <p class="lead">We have detected you're on a mobile device. So in order to make it nice for you, here are the links you need.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mb-4">
+            <a class="btn btn-secondary btn-block" disabled><i class="fas fa-download"></i> Download Android GDM</a>
+            <h5 style="color: white"><center>GDMa is still in development!</center></h5>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="https://www.discord.gg/gdm" class="btn btn-danger btn-block"><i class="fab fa-discord"></i> Join Discord</a>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <a href="https://www.patreon.com/GDMservers" class="btn btn-danger btn-block"><i class="fas fa-crown"></i> Become a Patron</a>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <h2>Latest Patreon Supporters</h2>
+    </div>
+    <div class="card mb-4">
+        <div class="card-body">
+            {% if latest_supporters %}
+                <ul class="list-unstyled supporter-list">
+                    {% for supporter in latest_supporters %}
+                        <li class="supporter"><i class="fas fa-star"></i> {{ supporter }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="no-supporters text-center">No supporters found.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script src="static/js/script.js"></script>
+{% endblock %}
