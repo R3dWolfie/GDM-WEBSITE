@@ -69,4 +69,8 @@ def mobile():
 
 if __name__ == '__main__':
     print("Fetching patrons...")
+    latest_supporters = []
+    for pledge in all_pledges:
+        latest_supporters.append(pledge.relationship('patron').attribute('full_name'))
+    print(latest_supporters)
     app.run(debug=True, host="0.0.0.0")
